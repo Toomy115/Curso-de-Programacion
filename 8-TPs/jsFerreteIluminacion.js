@@ -10,5 +10,82 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+ 	var cantidad, desc, bruto, seleccion, neto, desc2, neto2;
+
+ 	cantidad = parseInt(document.getElementById("Cantidad").value);
+ 	seleccion = document.getElementById("Marca").value;
+
+ 	if (cantidad>=6 ) {
+ 		bruto = cantidad*35;
+ 		desc = 50 * bruto / 100;
+ 		document.getElementById("precioDescuento").value = desc;
+ 	}
+
+
+
+
+
+    if (cantidad==5 && seleccion=="ArgentinaLuz") {
+    	bruto = cantidad*35;
+    	desc = 40 * bruto / 100;
+    	neto = bruto - desc;
+    	document.getElementById("precioDescuento").value = neto;
+    }
+    	else if (cantidad==5 && seleccion != "ArgentinaLuz") {
+    		bruto = cantidad*35;
+    		desc = 30 * bruto / 100;
+    		neto = bruto - desc;
+    		document.getElementById("precioDescuento").value = neto;
+    	}
+
+
+
+
+
+
+    if (cantidad==4 && seleccion=="ArgentinaLuz" || seleccion=="FelipeLamparas") {
+    		bruto = cantidad*35;
+    		desc = 25 * bruto / 100;
+    		neto = bruto - desc;
+    		document.getElementById("precioDescuento").value = neto;
+    }
+
+    else if (cantidad==4 && seleccion != "ArgentinaLuz"||"FelipeLamparas") {
+    		bruto = cantidad*35;
+    		desc = 20 * bruto / 100;
+    		neto = bruto - desc;
+    		document.getElementById("precioDescuento").value = neto;
+    }
+
+
+
+
+
+    if (cantidad==3 && seleccion=="ArgentinaLuz") {
+    		bruto = cantidad*35;
+    		desc = 15 * bruto / 100;
+    		neto = bruto - desc;
+    		document.getElementById("precioDescuento").value = neto;
+    }
+
+    else if (cantidad==3 && seleccion=="FelipeLamparas") {
+    		bruto = cantidad*35;
+    		desc = 10 * bruto / 100;
+    		neto = bruto - desc;
+    		document.getElementById("precioDescuento").value = neto;
+    }
+    else if (cantidad==3 && seleccion != "ArgentinaLuz"||"FelipeLamparas") {
+    		bruto = cantidad*35;
+    		desc = 5 * bruto / 100;
+    		neto = bruto - desc;
+    		document.getElementById("precioDescuento").value = neto;
+    	}
+  if (neto>120) {
+  	desc2 = 10 * neto / 100;
+  	desc2 = desc2 - neto;
+  	neto2 = neto + desc2; 
+  	alert ("Usted pago " + neto2 + " de IIBB.");
+
+  }
 }
+
